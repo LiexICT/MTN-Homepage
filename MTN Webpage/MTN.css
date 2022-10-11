@@ -1,0 +1,1637 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+}
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+  /* color: #fff; */
+}
+
+span {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.sticky {
+  background-color: var(--dark);
+  color: #fff;
+  position: fixed;
+  width: fit-content;
+  padding: 0.5em;
+  right: 0;
+  top: 40%;
+  z-index: 999;
+  writing-mode: vertical-rl !important;
+  text-rendering: auto;
+}
+
+.sticky:hover {
+  background-color: var(--gray);
+  cursor: pointer;
+}
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+/* MOBILE DESIGNS */
+
+@media (max-width: 768px) {
+  /* Header styles */
+
+  .header-nav {
+    position: absolute;
+    top: min(8%, 9vh);
+    right: 0;
+    left: 0;
+    transform: scaleY(0);
+    transition: 0.4s;
+    transform-origin: top;
+    transition: 0.6s;
+    z-index: 5;
+  }
+
+  .desktopheader-nav {
+    display: none;
+  }
+
+  .header-nav li {
+    background-color: var(--dark);
+    color: #fff;
+    padding: 1em;
+  }
+
+  .header-nav ion-icon {
+    display: none;
+  }
+
+  .header-top {
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    align-items: center;
+  }
+
+  .header-curved-div {
+    position: absolute;
+    top: -25px;
+  }
+
+  .desktopheader-curved-div {
+    display: none;
+  }
+
+  .slideshow-container img {
+    height: 150px;
+  }
+
+  .header-bottom-curved-div {
+    position: absolute;
+    bottom: -5px;
+  }
+
+  .dots {
+    z-index: 4;
+    position: relative;
+    top: -35px;
+    left: 95%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .dot .active {
+    background-color: #000;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 5px;
+    width: 5px;
+    margin: 0 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .dot .active {
+    background-color: #000;
+  }
+
+  .search {
+    display: none;
+  }
+
+  /* Plus sign icons on header nav */
+
+  .investor::after {
+    content: "\02795";
+    color: var(--light);
+    float: right;
+    margin-right: 10px;
+    position: fixed;
+    top: 1%;
+    right: 2px;
+    transition: 0.4s;
+  }
+
+  .support::after {
+    content: "\02795";
+    color: var(--light);
+    float: right;
+    margin-right: 10px;
+    position: fixed;
+    top: 35%;
+    right: 2px;
+    transition: 0.4s;
+  }
+  .about::after {
+    content: "\02795";
+    color: var(--light);
+    float: right;
+    margin-right: 10px;
+    position: fixed;
+    top: 46%;
+    right: 2px;
+    transition: 0.4s;
+  }
+  .careers::after {
+    content: "\02795";
+    color: var(--light);
+    float: right;
+    margin-right: 10px;
+    position: fixed;
+    top: 57%;
+    right: 2px;
+    transition: 0.4s;
+  }
+
+  .accordion {
+    padding: 10px;
+  }
+
+  .active .accordion {
+    opacity: 0.4;
+  }
+
+  .active::after {
+    content: "\02796";
+  }
+
+  .nav-search {
+    background-color: var(--dark);
+  }
+
+  .nav-search input {
+    background-color: var(--dark);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-block: 0.3em;
+    background-image: url(/images/ios-search.svg);
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position-y: center;
+    background-position-x: right;
+  }
+
+  /* Menu-button */
+
+  .container {
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    background-color: var(--dark);
+    width: 15px;
+    height: 3px;
+    margin-bottom: 4px;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-5px, 4px);
+    transform: rotate(-45deg) translate(-5px, 4px);
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-4px, -4px);
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+
+  /* List Styles */
+
+  li {
+    list-style: none;
+    font-size: 0.8rem;
+  }
+
+  .header-nav ul {
+    background-color: var(--dark);
+    color: var(--light);
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+
+  .header-nav li {
+    border-bottom: 2px solid var(--light);
+    cursor: pointer;
+    padding-left: 2.5em;
+    padding-top: 0.5em;
+    text-decoration: solid;
+    font-size: 0.7em;
+  }
+
+  /* Images style */
+
+  img {
+    width: 100%;
+  }
+
+  .fiveg-text {
+    position: absolute;
+    top: 50%;
+  }
+
+  .header-logo {
+    max-width: 15%;
+  }
+
+  .header-image-slide {
+    display: block;
+  }
+
+  /* Button styles */
+  .header-nav button {
+    width: 100%;
+    text-align: left;
+    background-color: var(--dark);
+    border: none;
+  }
+
+  .grid-div {
+    position: relative;
+    top: -4px;
+  }
+
+  .grid-container {
+    position: relative;
+    top: -10px;
+    /* display: none; */
+  }
+
+  .desktop-grid-div {
+    display: none;
+  }
+
+  .grid-container-div {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    background-color: var(--yellow);
+    height: fit-content;
+    padding-block: 4vw;
+    padding-inline: 2em;
+    gap: 0.5em;
+    font-size: 0.8rem;
+    padding-inline: 3em;
+  }
+
+  .grid-container-div ion-icon {
+    font-size: 1.2rem;
+  }
+
+  .personal {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5em;
+    padding-block: 0.5em;
+  }
+
+  .personal-icon {
+    color: var(--yellow);
+  }
+
+  .business {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5em;
+    padding-block: 0.5em;
+    gap: 0.5em;
+  }
+
+  .play {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5em;
+    padding-block: 0.5em;
+    gap: 0.5em;
+  }
+
+  .plays-icon {
+    color: var(--pink);
+  }
+
+  .momo {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5em;
+    padding-block: 0.5em;
+    gap: 0.5em;
+  }
+
+  .momo-icon {
+    color: var(--blue);
+  }
+
+  .login {
+    grid-column: 1/3;
+    text-align: left;
+    font-size: 0.8rem;
+    gap: 0.5em;
+  }
+
+  .login-icon {
+    display: none;
+  }
+
+  .link-icon {
+    display: none;
+  }
+
+  .link {
+    grid-column: 1/3;
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 2em;
+  }
+  .link ion-icon {
+    font-size: 0.6em;
+  }
+
+  .header-btn {
+    background-color: var(--light);
+    border-radius: 50px;
+    border: 2px solid #fff;
+  }
+
+  .header-btn ion-icons {
+    font-size: 1.05rem;
+  }
+
+  .header-btn1 {
+    gap: 0.5em;
+  }
+  .header-btn1 > ion-icon {
+    color: var(--yellow);
+  }
+  .header-btn3 > ion-icon {
+    color: var(--pink);
+  }
+  .header-btn4 > ion-icon {
+    color: var(--primary);
+  }
+
+  .swipe-btn {
+    position: relative;
+    top: 35%;
+    left: 50%;
+    /* z-index: 2; */
+    color: var(--dark);
+    display: flex;
+  }
+
+  .header-image-text-container {
+    display: none;
+  }
+  .image-btn {
+    background-color: var(--yellow);
+    padding: 0.5em 1.5em;
+    border-radius: 50px;
+    border: 2px solid #fff;
+  }
+
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    left: 3%;
+  }
+
+  .text ion-icon {
+    color: black;
+    font-size: 0.6em;
+  }
+
+  .text .image-btn {
+    background-color: var(--yellow);
+    padding: 0.25em 0.5em;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    border: none;
+    font-size: 0.8rem;
+  }
+
+  .panel {
+    display: none;
+  }
+
+  .accordion {
+    cursor: pointer;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .accordion::after {
+    content: "\02795";
+  }
+
+  .active .accordion {
+    opacity: 0.6;
+  }
+
+  .active::after {
+    content: "\02796";
+  }
+
+  /* Main styles */
+
+  .card-header {
+    margin-block: 2em;
+    display: flex;
+  }
+
+  .card-header h2 {
+    margin-left: 50px;
+  }
+
+  .arrow-forward {
+    background-color: var(--light);
+    border: 1px solid var(--yellow);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .person {
+    background-color: var(--yellow);
+    color: var(--white);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+  }
+
+  .pink-btn {
+    background-color: var(--pink);
+    color: var(--light);
+    padding: 0.2em 1.5em 0.5em 1em;
+  }
+
+  .blue-btn {
+    background-color: var(--blue);
+    color: var(--light);
+    padding: 0.2em 1.5em 0.5em 1em;
+  }
+
+  .black-btn {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 0.2em 1.5em 0.5em 1em;
+  }
+  /* Personal styles */
+
+  .personal-cards h5 {
+    background-color: var(--yellow);
+    width: fit-content;
+    padding: 0.25em;
+  }
+
+  .personal-cards h3 {
+    color: var(--white);
+    font-size: 1.65em;
+  }
+
+  .sw-card {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 1.2em;
+    padding-top: 10em;
+    border-radius: 15px;
+    margin-bottom: 2.5em;
+    height: 300px;
+    width: 250px;
+  }
+
+  .personal-cards {
+    /* display: flex; */
+    flex-direction: row;
+    gap: 2.5em;
+    color: #fff;
+  }
+
+  .broadband-card {
+    background: rgba(0, 0, 0, 0.5) url(./images/New-Broadband-look_.jpeg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .yellow-btn {
+    border: none;
+    position: relative;
+    padding: 0.5em 1.5em;
+    font-size: 0.8em;
+  }
+
+  .btn-icon {
+    font-size: 0.6em;
+  }
+
+  .data-plans-card {
+    background: rgba(0, 0, 0, 0.4) url(./images/banner-data3.jpg);
+    padding-top: 7.5em;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .personal-cardd {
+    background: rgba(0, 0, 0, 0.5) url(./images/4G-Banner.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .pulse-card {
+    background: rgba(0, 0, 0, 0.5) url(./images/mPulse-Web-2.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .tariff-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-xtravalue.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8em;
+  }
+
+  /* Business Card styles */
+
+  .business-bcg {
+    background-color: #f8f9fa;
+  }
+
+  .business-cards {
+    /* display: flex; */
+    gap: 2.5em;
+    color: #fff;
+  }
+
+  .business-cards h5 {
+    background-color: var(--dark);
+    width: fit-content;
+  }
+
+  .business-cards button {
+    border: none;
+  }
+
+  .business .case {
+    color: var(--white);
+    background-color: var(--dark);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+  }
+
+  .business .arrow-forward {
+    background-color: var(--light);
+    border: 1px solid var(--dark);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .business-curved-div {
+    position: relative;
+    top: -25px;
+  }
+
+  .mobility-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-card-datapass.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 10em;
+  }
+
+  .hynetflex-card {
+    background-color: var(--gray);
+    padding-top: 10em;
+  }
+
+  .productivity-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-card-hynet.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8.5em;
+  }
+
+  .collaboration-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-card-callassist.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8.5em;
+  }
+
+  /* Play styles */
+
+  .play-curved-div {
+    position: relative;
+    bottom: -5px;
+  }
+
+  .desktopplay-curved-div {
+    display: none;
+  }
+
+  .play-cards {
+    /* display: flex; */
+    gap: 2.5em;
+  }
+
+  .play .play-icon {
+    color: var(--white);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+    border: 2px solid var(--pink);
+    background-color: var(--pink);
+  }
+
+  .play .arrow-forward {
+    background-color: var(--light);
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .play-cards h5 {
+    background-color: var(--pink);
+    width: fit-content;
+    padding: 0.25em;
+    color: var(--white);
+  }
+  .play-cards h3 {
+    color: var(--white);
+    /* font-size: 1.65em; */
+  }
+
+  .play-cards button {
+    border: none;
+  }
+
+  .audapp-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/AUD-APP-WEB-BANNER-.jpeg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .ayoba-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/ayoba-web-banner-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .mdundo-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Mdundo-Web.jpeg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .learn-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Tidal-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 15em;
+  }
+
+  .feel-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-5-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8em;
+  }
+
+  /* MoMo styles */
+
+  .momo-bcg {
+    background-color: #f8f9fa;
+  }
+
+  .MoMo-cards {
+    background-color: var(--light);
+    /* display: flex; */
+    gap: 2.5em;
+  }
+
+  .momo-curved-div {
+    position: relative;
+    top: 36px;
+  }
+  .momo .arrow-forward {
+    background-color: var(--light);
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .momo .money-icon {
+    color: var(--white);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+    border: 2px solid var(--blue);
+    background-color: var(--blue);
+  }
+
+  .MoMo-cards h5 {
+    background-color: var(--blue);
+    width: fit-content;
+    padding: 0.25em;
+    color: var(--white);
+  }
+  .MoMo-cards h3 {
+    color: var(--white);
+    font-size: 1.65em;
+  }
+
+  .MoMo-cards button {
+    border: none;
+  }
+
+  .become-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-9-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .money-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-12-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 10em;
+  }
+  .agent-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-4-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .faq-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-7-2.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 10em;
+  }
+
+  /* Footer styles */
+
+  footer {
+    color: var(--white);
+    margin-top: 1em;
+    position: relative;
+    bottom: 0;
+  }
+
+  .desktopfooter-nav {
+    display: none;
+  }
+
+  .mobilefooter-nav {
+    background-color: var(--dark);
+  }
+
+  .mobilefooter-nav li {
+    border-bottom: 1px solid var(--light);
+    padding: 1.5em;
+  }
+
+  /* Icon styles */
+  .social-icon {
+    padding: 1.5em;
+    background-color: var(--dark);
+  }
+  .social-icon ion-icon {
+    font-size: 1.5rem;
+    padding-right: 0.2em;
+  }
+
+  small {
+    font-size: 0.65em;
+  }
+
+  .page-buttom {
+    position: relative;
+  }
+
+  .footer-curved-div {
+    position: absolute;
+    top: -25px;
+  }
+
+  .last-page-divider {
+    position: relative;
+    top: -15px;
+    font-size: 2rem;
+  }
+}
+
+/* Tablet & Desktop styles */
+
+@media (min-width: 768px) {
+  /* Header styles */
+
+  .header-top {
+    padding: 1em;
+    background-color: var(--yellow);
+    display: flex;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .header-logo {
+    width: 100px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .accordion ion-icon {
+    display: none;
+  }
+
+  .panel {
+    display: none;
+  }
+
+  .desktopheader-nav {
+    padding-left: 2em;
+    display: flex;
+    gap: 3em;
+    align-items: center;
+  }
+
+  .desktopsearch {
+    background-image: url(/images/ios-search.svg);
+    background-repeat: no-repeat;
+    background-position: 140px;
+    background-color: var(--yellow);
+    border-radius: 20px;
+    height: 30px;
+    margin-left: 10em;
+    padding-left: 10px;
+  }
+
+  .header-curved-div {
+    display: none;
+  }
+
+  .desktopheader-curved-div {
+    position: relative;
+  }
+
+  .nav-search,
+  .nigeria {
+    display: none;
+  }
+
+  .header-logo {
+    width: 6%;
+  }
+
+  .search {
+    background-image: url(/images/ios-search.svg);
+    background-repeat: no-repeat;
+    background-position-x: 175px;
+    border-radius: 20px;
+    padding: 0.5em;
+    background-color: var(--yellow);
+    font-size: 1rem;
+  }
+
+  .header-nav form {
+    width: fit-content;
+  }
+
+  /* Header image text styles */
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    color: #fff;
+  }
+
+  .text button {
+    background-color: var(--yellow);
+    border-radius: 20px;
+    padding: 0.5em 1.5em;
+    font-size: 1rem;
+    border: none;
+  }
+
+  .text h3 {
+    font-size: clamp(2rem, 0.936rem + 4.5155vw, 5rem);
+  }
+
+  .text p {
+    font-size: clamp(1.5rem, 1.3227rem + 0.7526vw, 2rem);
+  }
+
+  /* curved divs styles */
+  .header-curved-div {
+    display: none;
+  }
+
+  .header-bottom-curved-div {
+    display: none;
+  }
+
+  .desktopheader-bottom-curved-div {
+    position: relative;
+    top: 28px;
+    /* bottom: -25px; */
+  }
+
+  .desktopheader-curved-div {
+    position: absolute;
+    bottom: 50px;
+  }
+
+  .grid-container-div {
+    position: relative;
+  }
+
+  /* Images styles */
+  .slideshow-container img {
+    max-height: 550px;
+  }
+
+  /* intermediate styles */
+  .mobile-gird-container {
+    display: none;
+  }
+
+  .desktop-grid-div {
+    background-color: var(--yellow);
+    position: relative;
+    top: -25px;
+    height: 200px;
+  }
+
+  .desktop-gird-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+  }
+
+  .midpage {
+    position: relative;
+    top: -40px;
+    border: 1px solid #fff;
+    border-radius: 100px/8px;
+    font-size: 3rem;
+    padding: 15px;
+    overflow: visible;
+  }
+
+  .desktop-personal {
+    background-color: #fff;
+    color: var(--yellow);
+  }
+
+  .desktop-business {
+    background-color: #fff;
+  }
+
+  .desktop-play {
+    color: var(--pink);
+    background-color: #fff;
+  }
+
+  .desktop-momo {
+    background-color: #fff;
+    color: var(--blue);
+  }
+
+  .alan {
+    position: relative;
+  }
+
+  .alan span {
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    left: 15px;
+  }
+
+  .desktopgrid-container-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .desktopgrid-container-btn button {
+    background-image: url(/images/ios-arrow-forward.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-size: 1.5rem;
+    background-color: var(--yellow);
+    border-radius: 50px;
+    padding: 0.5em 6em 0.5em 1em;
+    border: 2px solid #fff;
+    position: relative;
+  }
+
+  /* Main styles */
+
+  .yellow-btn {
+    border: none;
+    position: relative;
+    font-size: 0.8em;
+    background-color: var(--yellow);
+    color: #fff;
+    padding: 0.2em 1.5em 0.5em 1em;
+    border-radius: 20px;
+  }
+
+  .pink-btn {
+    background-color: var(--pink);
+    color: var(--light);
+    padding: 0.2em 1.5em 0.5em 1em;
+    border-radius: 20px;
+  }
+
+  .blue-btn {
+    background-color: var(--blue);
+    color: var(--light);
+    padding: 0.2em 1.5em 0.5em 1em;
+    border-radius: 20px;
+  }
+
+  .black-btn {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 0.2em 1.5em 0.5em 1em;
+    border-radius: 20px;
+  }
+
+  .card-header {
+    margin-block: 2em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-header h2 {
+    margin-left: 50px;
+  }
+
+  .arrow-forward {
+    background-color: var(--light);
+    border: 1px solid var(--yellow);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .person {
+    background-color: var(--yellow);
+    color: var(--white);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+  }
+
+  .personal-cards h5 {
+    background-color: var(--yellow);
+    width: fit-content;
+    padding: 0.25em;
+  }
+
+  .personal-cards h3 {
+    color: var(--white);
+    font-size: 1.65em;
+  }
+
+  .sw-card {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 1.2em;
+    padding-top: 10em;
+    border-radius: 15px;
+    margin-bottom: 2.5em;
+    height: 350px;
+    width: 250px;
+  }
+
+  .personal-cards {
+    display: flex;
+
+    flex-direction: row;
+    gap: 1.5em;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .broadband-card {
+    background: rgba(0, 0, 0, 0.5) url(./images/New-Broadband-look_.jpeg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .btn-icon {
+    font-size: 0.6em;
+  }
+
+  .data-plans-card {
+    background: rgba(0, 0, 0, 0.4) url(./images/banner-data3.jpg);
+    padding-top: 7.5em;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .personal-cardd {
+    background: rgba(0, 0, 0, 0.5) url(./images/4G-Banner.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .pulse-card {
+    background: rgba(0, 0, 0, 0.5) url(./images/mPulse-Web-2.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .tariff-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-xtravalue.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8em;
+  }
+
+  /* Business Card styles */
+
+  .business-bcg {
+    background-color: #f8f9fa;
+  }
+
+  .play-curved-div {
+    display: none;
+  }
+
+  .desktopplay-curved-div {
+    position: relative;
+    top: -25px;
+  }
+
+  .business-cards {
+    display: flex;
+    gap: 1.5em;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .business-cards h5 {
+    background-color: var(--dark);
+    width: fit-content;
+  }
+
+  .business-cards button {
+    border: none;
+  }
+
+  .business .case {
+    color: var(--white);
+    background-color: var(--dark);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+  }
+
+  .business .arrow-forward {
+    background-color: var(--light);
+    border: 1px solid var(--dark);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .business-curved-div {
+    position: relative;
+    top: -25px;
+  }
+
+  .mobility-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-card-datapass.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 10em;
+  }
+
+  .hynetflex-card {
+    background-color: var(--gray);
+    padding-top: 10em;
+  }
+
+  .productivity-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-card-hynet.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8.5em;
+  }
+
+  .collaboration-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/banner-home-card-callassist.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8.5em;
+  }
+
+  /* Play styles */
+
+  .play-cards {
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .play .play-icon {
+    color: var(--white);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+    border: 2px solid var(--pink);
+    background-color: var(--pink);
+  }
+
+  .play .arrow-forward {
+    background-color: var(--light);
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .play-cards h5 {
+    background-color: var(--pink);
+    width: fit-content;
+    padding: 0.25em;
+    color: var(--white);
+  }
+  .play-cards h3 {
+    color: var(--white);
+  }
+
+  .play-cards button {
+    border: none;
+  }
+
+  .audapp-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/AUD-APP-WEB-BANNER-.jpeg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .ayoba-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/ayoba-web-banner-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .mdundo-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Mdundo-Web.jpeg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .learn-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Tidal-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 15em;
+  }
+
+  .feel-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-5-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 8em;
+  }
+
+  /* MoMo styles */
+
+  .momo-bcg {
+    background-color: #f8f9fa;
+  }
+
+  .MoMo-cards {
+    background-color: var(--light);
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .momo-curved-div {
+    position: relative;
+    top: 36px;
+  }
+  .momo .arrow-forward {
+    background-color: var(--light);
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 70px;
+  }
+
+  .momo .money-icon {
+    color: var(--white);
+    padding: 2.5px;
+    font-size: 1.5em;
+    border-radius: 3px;
+    margin-left: 30px;
+    border: 2px solid var(--blue);
+    background-color: var(--blue);
+  }
+
+  .MoMo-cards h5 {
+    background-color: var(--blue);
+    width: fit-content;
+    padding: 0.25em;
+    color: var(--white);
+  }
+  .MoMo-cards h3 {
+    color: var(--white);
+    font-size: 1.65em;
+  }
+
+  .MoMo-cards button {
+    border: none;
+  }
+
+  .become-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-9-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .money-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-12-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 10em;
+  }
+  .agent-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-4-1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 12em;
+  }
+
+  .faq-card {
+    background: rgba(0, 0, 0, 0.6) url(./images/Artboard-7-2.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding-top: 10em;
+  }
+
+  /* Footer styles */
+
+  footer {
+    color: var(--white);
+    margin-top: 1em;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+  }
+
+  .mobilefooter-nav {
+    display: none;
+  }
+
+  .desktopfooter-nav {
+    padding-top: 2em;
+    display: flex;
+    background-color: var(--dark);
+    justify-content: center;
+    gap: 1.5em;
+  }
+
+  .desktopfooter-nav li {
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  .desktopfooter-nav li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  /* Icon styles */
+
+  .social-icon {
+    padding: 1.5em;
+    background-color: var(--dark);
+  }
+
+  .social-icon ion-icon {
+    font-size: 1.5rem;
+    padding-right: 0.2em;
+  }
+
+  small {
+    font-size: 0.65em;
+    text-align: center;
+  }
+
+  .page-buttom {
+    position: relative;
+  }
+
+  .footer-curved-div {
+    position: absolute;
+    top: -25px;
+  }
+
+  .last-page-divider {
+    position: relative;
+    top: -15px;
+    font-size: 2rem;
+  }
+
+  .facebook:hover {
+    cursor: pointer;
+    color: var(--yellow);
+  }
+  .instagram:hover {
+    cursor: pointer;
+    color: var(--yellow);
+  }
+  .twitter:hover {
+    cursor: pointer;
+    color: var(--yellow);
+  }
+  .youtube:hover {
+    cursor: pointer;
+    color: var(--yellow);
+  }
+  .linkedin:hover {
+    cursor: pointer;
+    color: var(--yellow);
+  }
+}
